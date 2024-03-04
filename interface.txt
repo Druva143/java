@@ -1,0 +1,27 @@
+interface Resizable {
+	void resizeHeight(int h);
+	void resizeWidth(int w);
+}
+class Rectangle implements Resizable {
+	int height, width;
+	public Rectangle(int h, int w) {
+		height = h;
+		width = w;
+	}
+	@Override
+	public void resizeHeight(int h) {
+		height = h;
+	}
+	@Override
+	public void resizeWidth(int w) {
+		width = w;
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Rectangle obj = new Rectangle(10, 20);
+		System.out.println("Initial height=" + obj.height + " and width=" + obj.width);
+		obj.resizeHeight(30);
+		obj.resizeWidth(40);
+		System.out.println("After resized height=" + obj.height + " and width=" + obj.width);
+	}
